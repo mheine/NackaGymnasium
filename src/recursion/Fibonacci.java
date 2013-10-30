@@ -47,7 +47,7 @@ public class Fibonacci {
 	}
 
 	public static void main(String[] args){
-		int fibNumber = 30;
+		int fibNumber = 40;
 		Fibonacci fib = new Fibonacci();
 		long startTime = System.currentTimeMillis();
 		System.out.println(fib.fib(fibNumber));

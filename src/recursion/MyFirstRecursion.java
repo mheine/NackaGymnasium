@@ -5,12 +5,10 @@ package recursion;
  */
 public class MyFirstRecursion {
 	public static int multiplyLoop(int loops, int value){
-		if(loops <= 1){
+		if(loops <= 1)
 			return value;
-		}
-		else{
+		else
 			return value * multiplyLoop(loops-1, value);
-		}
 	}
 	
 	public static int addLoop(int loops, int value){
