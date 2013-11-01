@@ -18,4 +18,7 @@ public class Vehicle {
 	public String getOwner(){
 		return owner;
 	}
+	public String toString(){
+		return "A Vehicle";
+	}
 }

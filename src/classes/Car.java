@@ -14,9 +14,15 @@ public class Car extends Vehicle{
 		return maxSpeed;
 	}
 	
+	@Override
+	public String toString(){
+		return "A car";
+	}
+	
 	public static void main(String[] args){
-		Car car = new Car(100, 1000, 4, "oscis");
+		Car car = new Car(100, 1000, 4, "Oscis");
 		System.out.println(car.getMaxSpeed());
 		System.out.println(car.getOwner());
+		System.out.println(car);
 	}
 }

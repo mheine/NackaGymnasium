@@ -21,6 +21,6 @@ public class MyFirstRecursion {
 	}
 	public static void main(String[] args){
 		System.out.println(multiplyLoop(3, 5));
-		System.out.println(addLoop(3,3));
+		System.out.println(addLoop(3,4));
 	}
 }
