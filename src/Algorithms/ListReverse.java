@@ -7,6 +7,12 @@ public class ListReverse {
 	public static int[] reverseList(int[] list){
 		int[] al = list;
 		int mem;
+		/*
+		 * Why would the list not be reversed if we replaced
+		 * i<al.length/2
+		 * with
+		 * i<al.length?
+		 */
 		for(int i = 0 , j = al.length-1; i<al.length/2; i++, j--){
 			mem = al[i];
 			al[i] = al[j];

@@ -1,11 +1,11 @@
-package classes;
+package classes_functions;
 /*
  * Material for my lectures at Nacka Gymnasium
  * Oscar Alsing
  */
 public class Vehicle {
-	private int weight, wheels;
-	private String owner;
+	protected int weight, wheels;
+	protected String owner;
 	public Vehicle (int weight, int date, String owner){
 		this.weight = weight; this.wheels = date; this.owner = owner;
 	}
