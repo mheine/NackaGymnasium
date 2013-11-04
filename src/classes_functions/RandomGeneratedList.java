@@ -7,21 +7,25 @@ import java.util.Random;
  */
 public class RandomGeneratedList {
 	Random rand;
-	int maxVal;
+	int randomValueLimit;
 	int[] list;
-	public RandomGeneratedList(int maxVal){
-		this.maxVal = maxVal;
+	public RandomGeneratedList(int randomValueLimit, int size){
+		this.randomValueLimit = randomValueLimit;
 		rand = new Random();
-		list = new int[10];
+		list = new int[size];
 	}
 	
+	public int[] getList(){
+		generateList();
+		return list;
+	}
 	public void generateList(){
 		for(int i = 0; i<list.length; i++)
 			list[i] = generateRandomNumber();
 	}
 	
 	private int generateRandomNumber(){
-		return rand.nextInt(maxVal) +1;
+		return rand.nextInt(randomValueLimit) +1;
 	}
 	
 	public void printList(){
@@ -30,7 +34,7 @@ public class RandomGeneratedList {
 	}
 	
 	public static void main(String[] args){
-		RandomGeneratedList rgl = new RandomGeneratedList(10);
+		RandomGeneratedList rgl = new RandomGeneratedList(10, 10);
 		rgl.generateList();
 		rgl.printList();
 	}

@@ -24,7 +24,7 @@ public class Car extends Vehicle{
 	 */
 	public void tankCar(GasStation gs, int amountOfLiters){
 		// refillGas returns the amount of gas that could be provided
-		System.out.println("Refilling gas at the " + gs.getColor() + " station named " + gs.getName());
+		System.out.println("Refilling gas at the " + gs.getColor() + " gas station named \"" + gs.getName() + "\"");
 		currentAmountOfGas += gs.refillGas(amountOfLiters);
 		System.out.println("Our current amount of gas is " + currentAmountOfGas + "liters");
 	}
@@ -36,7 +36,7 @@ public class Car extends Vehicle{
 	
 	public static void main(String[] args){
 		Car car = new Car(100, 1000, 4, "Oscis", 1500); /* That's one huge tank */
-		GasStation gs = new GasStation("Go back to LoL", "Black");
+		GasStation gs = new GasStation("Go back to LoL noob", "yellow");
 		System.out.println(car);
 		System.out.println(car.calculateDistanceTraveled(car.getMaxSpeed(), 15));
 		car.tankCar(gs, 100);
