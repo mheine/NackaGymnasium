@@ -5,31 +5,58 @@ import java.awt.event.*;
 
 import javax.swing.*;
 
-public class Window_2 extends JFrame implements ActionListener {
+@SuppressWarnings("serial")
+public class Window_2 extends JFrame implements ActionListener, KeyListener {
 	
-	private JButton titleButton;
-	private JTextArea textarea;
+	private JButton blueButton;
+	private JButton redButton;
+	private JButton greenButton;
+	private JLabel text;
+	private JLabel tangent;
+	private JTextArea a;
+	private JPanel mainPanel;
 	
 	public Window_2() {
 		
 		init();
 		
-		JPanel mainPanel = new JPanel();
+		mainPanel = new JPanel();
 		this.add(mainPanel);
 		
-		titleButton = new JButton("Byt titel");
-		titleButton.addActionListener(this);
-
-		textarea = new JTextArea("", 2, 20);
 		
+		
+		blueButton = new JButton("Byt till Blå");
+		blueButton.addActionListener(this);
+		blueButton.addKeyListener(this);
 
-		mainPanel.add(titleButton);
-		mainPanel.add(textarea);
+		greenButton = new JButton("Byt till Grön");
+		greenButton.addActionListener(this);
+		greenButton.addKeyListener(this);
+
+		redButton = new JButton("Byt till Röd");
+		redButton.addActionListener(this);
+		redButton.addKeyListener(this);
+		
+		text = new JLabel("Färgen är svart");
+		tangent = new JLabel("Nuvarande bokstav: NULL");
+		
+		mainPanel.addKeyListener(this);
+		
+		mainPanel.add(blueButton);
+		mainPanel.add(greenButton);
+		mainPanel.add(redButton);
+		mainPanel.add(text);
+		mainPanel.add(tangent);
 		
 	}
 	
+	
+	private void setFocus() {
+		mainPanel.setFocusable(true);
+	}
+	
 	private void init() {
-		setSize(500, 100);
+		setSize(400, 100);
 		setVisible(true);
 		
 		setDefaultCloseOperation(EXIT_ON_CLOSE);
@@ -42,17 +69,38 @@ public class Window_2 extends JFrame implements ActionListener {
 	
 	public static void main(String [] args) {
 		
-		new Window_2();   
+		new Window_2();  
 		
 	}
 
 	public void actionPerformed(ActionEvent e) {
 		
-		if(e.getSource() == titleButton) {
-			String title = textarea.getText();
-			this.setTitle(title);
-
+		if(e.getSource() == redButton) {
+			text.setForeground(new Color(255, 0, 0));
+			text.setText("Färgen är röd");
 		}
+		
+		if(e.getSource() == blueButton) {
+			text.setForeground(new Color(0, 0, 255));
+			text.setText("Färgen är blå");
+		}
+		
+		if(e.getSource() == greenButton) {
+			text.setForeground(new Color(0, 255, 0));
+			text.setText("Färgen är grön");
+		}
+		
+	}
+
+	@Override
+	public void keyPressed(KeyEvent ke) 	{ }
+
+	@Override
+	public void keyReleased(KeyEvent ke) 	{ }
+
+	@Override
+	public void keyTyped(KeyEvent ke) {
+		tangent.setText("Nuvarande tangent: " + ke.getKeyChar());
 		
 	}
 
