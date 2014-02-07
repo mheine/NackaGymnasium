@@ -11,9 +11,10 @@ public class Window_2 extends JFrame implements ActionListener, KeyListener {
 	private JButton blueButton;
 	private JButton redButton;
 	private JButton greenButton;
+	
 	private JLabel text;
 	private JLabel tangent;
-	private JTextArea a;
+	
 	private JPanel mainPanel;
 	
 	public Window_2() {
@@ -38,7 +39,7 @@ public class Window_2 extends JFrame implements ActionListener, KeyListener {
 		redButton.addKeyListener(this);
 		
 		text = new JLabel("Färgen är svart");
-		tangent = new JLabel("Nuvarande bokstav: NULL");
+		tangent = new JLabel("Nuvarande bokstav: ");
 		
 		mainPanel.addKeyListener(this);
 		
@@ -50,13 +51,8 @@ public class Window_2 extends JFrame implements ActionListener, KeyListener {
 		
 	}
 	
-	
-	private void setFocus() {
-		mainPanel.setFocusable(true);
-	}
-	
 	private void init() {
-		setSize(400, 100);
+		setSize(400, 90);
 		setVisible(true);
 		
 		setDefaultCloseOperation(EXIT_ON_CLOSE);

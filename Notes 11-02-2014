@@ -1,0 +1,35 @@
+Föreläsning 11/02/2014
+
+* 	Introduktion
+		Vilka vi är
+		Vår bakgrund
+		Vad vi har gjort med grafiska komponenter
+		(Skriv upp mail och git direkt)
+
+*	Grafiska komponenter - (Window_1, kanske Window_0 om det behövs; borde det inte göra)
+		Basics om bibliotek; vad Swing är
+		Javas standardbibliotek, finns mycket man kan leka med
+		Funkar som vanliga klasser, med vanliga metoder
+
+		extends JFrame - varför?
+		implements ActionListener - varför?
+		(Förklara lite om Interfaces; kortfattat)
+
+*	ActionListener
+		Man vill ju få saker att hända
+		Vi "lyssnar" på "actions", låter datorn se vad vi trycker på knappar
+
+* 	KeyListener
+		Uppdatera objekten allt eftersom
+		Notera då att det inte är själva objekten som ändras, uten endast objektens attribut
+		Då tex setText()
+
+* Layout Managers
+		Nämn några exempel
+		Olika managers för olika tillfällen
+			Kalkylator? 			- GridLayout
+			FYlla i massa saker? 	- SpringLayout
+			Inte så viktigt? 		- FlowLayout
+
+* TODO
+
