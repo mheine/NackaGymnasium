@@ -15,38 +15,48 @@ import java.awt.event.*;
 import javax.swing.*;
 public class Window_3 extends JFrame implements ActionListener{
 	private Spelplan plan = new Spelplan();
-	private JPanel pan = new JPanel();
-	private JButton[] b = new JButton[4];
+	private JPanel buttonPanel = new JPanel();
+	private JButton[] buttons = new JButton[4];
 	private String[] s ={"Nytt spel","Paus","Fortsätt","Avsluta"};
+	
 	public Window_3() {
 		setTitle("AMF 101");
+		
 		plan.setPreferredSize(new Dimension(350,250));
 		plan.setBackground(Color.white);
-		pan.setLayout(new FlowLayout());
-		for (int i=0; i<b.length; i++) {
-			b[i] = new JButton();
-			b[i].setText(s[i]);
-			b[i].addActionListener(this);
-			pan.add(b[i]);
+		
+		buttonPanel.setLayout(new FlowLayout());
+		
+		for (int i=0; i<buttons.length; i++) {
+			buttons[i] = new JButton();
+			buttons[i].setText(s[i]);
+			buttons[i].addActionListener(this);
+			buttonPanel.add(buttons[i]);
 		}
+		
 		add(plan, BorderLayout.CENTER);
-		add(pan, BorderLayout.SOUTH);
+		add(buttonPanel, BorderLayout.SOUTH);
+		
 		pack();
 		plan.init();
+		
 		setVisible(true);
 		setDefaultCloseOperation(EXIT_ON_CLOSE);
 	}
 	public void actionPerformed(ActionEvent e) {
 		plan.requestFocus();
-		if (e.getSource() == b[0])
+		
+		if (e.getSource() == buttons[0])
 			plan.nyttSpel();
-		else if (e.getSource() == b[1])
+		else if (e.getSource() == buttons[1])
 			plan.stoppaSpel();
-		else if (e.getSource() == b[2])
+		else if (e.getSource() == buttons[2])
 			plan.startaSpel();
-		else if (e.getSource() == b[3])
+		else if (e.getSource() == buttons[3])
 			System.exit(0);
 	}
+	
+	
 	////////////////////////////
 	public static void main (String[] arg) {
 		new Window_3();
