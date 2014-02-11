@@ -24,12 +24,33 @@ Föreläsning 11/02/2014
 		Notera då att det inte är själva objekten som ändras, uten endast objektens attribut
 		Då tex setText()
 
+* PaintComponent
+		Vi väljer en komponent som vi vill rita i
+		Med detta kan man göra otroligt mycket
+		Tänk ett actionspel, där man kan skjuta
+		Gör en klass för ett skott, sen kan du köra g.drawRect(int, int)
+		Detta kombinerat med Swings inbyggda stöd för bilder (typ GIFs)
+		Gör att det man skapar kan bli ganska snyggt
+
+* Animation
+		Det första man tänkter på när man tänker grafik
+		How do make thing move
+		Kan enklast lösas med timer; låt timer ticka, för varje tick så
+		kollar du i din actionPerformed() och uppdaterar de bilder du har
+
 * Layout Managers
 		Nämn några exempel
 		Olika managers för olika tillfällen
 			Kalkylator? 			- GridLayout
 			FYlla i massa saker? 	- SpringLayout
-			Inte så viktigt? 		- FlowLayout
+			Låta saker flyta på? 	- FlowLayout
 
-* TODO
+* 	Allmäna tips
+		Är man mer intresserad finns det hjälp att få
+		Finns alltid information på nätet
+		NETBEANS! Soft om man är lat!
+		Lek med Swing är pilligt
+		Finns massvis av andra bibliotek, t.ex Slick
+
+* Frågor
 

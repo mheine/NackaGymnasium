@@ -13,12 +13,14 @@ public class Window_4 extends JFrame implements ActionListener{
 	public Window_4() {
 		setTitle("Rita!");
 		
+		//Inställningar för vår rityta
 		drawingBoard.setPreferredSize(new Dimension(300, 300));
 		drawingBoard.setBackground(Color.white);
 		
-		
+		//Lägg till ytan i mitten
 		add(drawingBoard, BorderLayout.CENTER);
 		
+		//Förminska rytan så mycket som möjligt
 		pack();
 		
 		setVisible(true);
@@ -38,6 +40,9 @@ public class Window_4 extends JFrame implements ActionListener{
 class DrawingBoard extends JPanel {
 
 	public void paintComponent(Graphics g) {
+
+		//Varför super?
+		//Jo, för att vi vill rita på vår JPanel.
 		super.paintComponent(g);
 		
 		g.setColor(new Color(240, 210, 210));

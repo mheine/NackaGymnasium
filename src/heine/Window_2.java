@@ -8,6 +8,8 @@ import javax.swing.*;
 @SuppressWarnings("serial")
 public class Window_2 extends JFrame implements ActionListener, KeyListener {
 	
+
+	//Variabler
 	private JButton blueButton;
 	private JButton redButton;
 	private JButton greenButton;
@@ -19,13 +21,13 @@ public class Window_2 extends JFrame implements ActionListener, KeyListener {
 	
 	public Window_2() {
 		
+		//Vi har nu en metod för alla "basics". Snyggare så helt enkelt.
 		init();
 		
 		mainPanel = new JPanel();
 		this.add(mainPanel);
 		
-		
-		
+		//Skapa knappar och dess attribut.
 		blueButton = new JButton("Byt till Blå");
 		blueButton.addActionListener(this);
 		blueButton.addKeyListener(this);
@@ -38,9 +40,11 @@ public class Window_2 extends JFrame implements ActionListener, KeyListener {
 		redButton.addActionListener(this);
 		redButton.addKeyListener(this);
 		
+		//Skapa Text-labels
 		text = new JLabel("Färgen är svart");
 		tangent = new JLabel("Nuvarande bokstav: ");
 		
+
 		mainPanel.addKeyListener(this);
 		
 		mainPanel.add(blueButton);
@@ -71,6 +75,7 @@ public class Window_2 extends JFrame implements ActionListener, KeyListener {
 
 	public void actionPerformed(ActionEvent e) {
 		
+		//Vilken knapp var det som vi gjorde något?
 		if(e.getSource() == redButton) {
 			text.setForeground(new Color(255, 0, 0));
 			text.setText("Färgen är röd");
@@ -95,6 +100,8 @@ public class Window_2 extends JFrame implements ActionListener, KeyListener {
 	public void keyReleased(KeyEvent ke) 	{ }
 
 	@Override
+	//KE är av typen KeyEvent, dvs något som gjorts med Tangentbordet.
+	//Vi vill se vilken tangent det var, därav ke.getKeyChar()
 	public void keyTyped(KeyEvent ke) {
 		tangent.setText("Nuvarande tangent: " + ke.getKeyChar());
 		

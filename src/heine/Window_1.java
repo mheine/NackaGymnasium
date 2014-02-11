@@ -7,6 +7,7 @@ import javax.swing.*;
 @SuppressWarnings("serial")
 public class Window_1 extends JFrame implements ActionListener{
 	
+	//Initiera variabler
 	private JPanel mainPanel;
 	
 	private JLabel countLabel;
@@ -27,10 +28,11 @@ public class Window_1 extends JFrame implements ActionListener{
 		
 		countLabel = new JLabel("Du har klickat " + counter + "gånger.");
 		
+		//Skapa knapp, säg åt datorn att "lyssna" på den
 		clickButton = new JButton("Klicka här!");
 		clickButton.addActionListener(this);
 		
-		
+		//Varför 'this'?
 		this.add(mainPanel);
 		mainPanel.add(clickButton);
 		mainPanel.add(countLabel);
